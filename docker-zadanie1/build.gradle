@@ -15,7 +15,6 @@ dependencies {
     implementation 'org.xerial:sqlite-jdbc:3.44.1.0'
 }
 
-// Add this section to create executable JAR
 jar {
     manifest {
         attributes 'Main-Class': 'MainKt'
