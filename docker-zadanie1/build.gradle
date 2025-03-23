@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.20'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+archivesBaseName = 'project'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.44.1.0'
+}
+
+// Add this section to create executable JAR
+jar {
+    manifest {
+        attributes 'Main-Class': 'MainKt'
+    }
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+application {
+    mainClass = 'MainKt'
+}

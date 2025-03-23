@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  kotlin-app:
+    build: .
+    image: my-kotlin-app
+    container_name: kotlin-container
