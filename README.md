@@ -17,9 +17,10 @@ przez CMD oraz gradle
 :white_check_mark: 5.0 dodać konfigurację docker-compose 
 
 
-[Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie1)
-[Image](https://hub.docker.com/r/ga1ile0/ebiznes-zadanie1)
-[Demo]()
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie1) <br/> 
+[Image](https://hub.docker.com/r/ga1ile0/ebiznes-zadanie1) <br/> 
+[Demo]() <br/> 
+
 
 **Zadanie 2** aplikacja na frameworku Play w Scali 3.
 
@@ -37,9 +38,9 @@ skrypt uruchamiający aplikację via ngrok
 :x: 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD 
 
 
-[Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie2)
-[Image]()
-[Demo]()
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie2) <br/>
+[Image]() <br/>
+[Demo]() <br/>
 
 
 Kod nalezy umieścić w w folderach lub na branchach, ale nalezy pod kazdym zadaniem wskazac link do brancha lub nazwę katalogu na repozytorium. 
