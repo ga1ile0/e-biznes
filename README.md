@@ -19,7 +19,7 @@ przez CMD oraz gradle
 
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie1) <br/> 
 [Image](https://hub.docker.com/r/ga1ile0/ebiznes-zadanie1) <br/> 
-[Demo]() <br/> 
+[Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie1_demo.mp4) <br/> 
 
 
 **Zadanie 2** aplikacja na frameworku Play w Scali 3.
