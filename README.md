@@ -23,7 +23,7 @@ przez CMD oraz gradle
 
 **Zadanie 2** aplikacja na frameworku Play w Scali 3.
 
-:white_check_mark: 3.0 Należy stworzyć kontroler do Produktów [Link do commita 1](hhttps://github.com/ga1ile0/e-biznes/commit/5e23ff862967d8df19e71d2814f34b4b479aeb12) 
+:white_check_mark: 3.0 Należy stworzyć kontroler do Produktów [link to commit](hhttps://github.com/Pandora-Project/e-business/commit/b2e689bfa148baeec9d0ac839a2044a31f4cc10c) <br/> 
 
 :x: 3.5 Do kontrolera należy stworzyć endpointy zgodnie z CRUD - dane
 pobierane z listy [Link do commita2 ]() 
