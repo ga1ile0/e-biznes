@@ -39,10 +39,5 @@ skrypt uruchamiający aplikację via ngrok  <br/>
 
 
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie2) <br/>
-[Image]() <br/>
-[Demo]() <br/>
+[Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie2_demo.mp4) <br/>
 
-
-Kod nalezy umieścić w w folderach lub na branchach, ale nalezy pod kazdym zadaniem wskazac link do brancha lub nazwę katalogu na repozytorium. 
-
-Do kazdego zadania nalezy przygotowac demo za pomocą https://obsproject.com/, a film (skompresowany) nalezy umiescic w katalogu demos.
