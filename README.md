@@ -24,18 +24,18 @@ przez CMD oraz gradle
 
 **Zadanie 2** aplikacja na frameworku Play w Scali 3.
 
-:white_check_mark: 3.0 Należy stworzyć kontroler do Produktów [Link do commita](https://github.com/ga1ile0/e-biznes/commit/5e23ff862967d8df19e71d2814f34b4b479aeb12) <br/> 
+:white_check_mark: 3.0 Należy stworzyć kontroler do Produktów [Commit](https://github.com/ga1ile0/e-biznes/commit/5e23ff862967d8df19e71d2814f34b4b479aeb12) <br/> 
 
-:x: 3.5 Do kontrolera należy stworzyć endpointy zgodnie z CRUD - dane
-pobierane z listy [Link do commita](https://github.com/ga1ile0/e-biznes/commit/f29a3cd458abfa7e9c218264b86486696954db04) <br/>
+:white_check_mark: 3.5 Do kontrolera należy stworzyć endpointy zgodnie z CRUD - dane
+pobierane z listy [Commit](https://github.com/ga1ile0/e-biznes/commit/f29a3cd458abfa7e9c218264b86486696954db04) <br/>
 
-:x: 4.0 Należy stworzyć kontrolery do Kategorii oraz Koszyka + endpointy
-zgodnie z CRUD 
+:white_check_mark: 4.0 Należy stworzyć kontrolery do Kategorii oraz Koszyka + endpointy
+zgodnie z CRUD [Commit](https://github.com/ga1ile0/e-biznes/commit/0a8931d7bbbc2f6de39ea2b756f617da8ef66f23) <br/>
 
 :x: 4.5 Należy aplikację uruchomić na dockerze (stworzyć obraz) oraz dodać
-skrypt uruchamiający aplikację via ngrok 
+skrypt uruchamiający aplikację via ngrok  <br/>
 
-:x: 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD 
+:x: 5.0 Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD  <br/>
 
 
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie2) <br/>
