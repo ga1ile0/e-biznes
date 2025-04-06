@@ -8,6 +8,11 @@ scalaVersion := "3.6.4"
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.1" % Test
 
+// Adds additional packages into Twirl
+//TwirlKeys.templateImports += "com.example.controllers._"
+
+// Adds additional packages into conf/routes
+// play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
 Universal / javaOptions ++= Seq(
   "-Dpidfile.path=/dev/null"
 )

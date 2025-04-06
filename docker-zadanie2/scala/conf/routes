@@ -6,7 +6,14 @@
 # Home page route
 GET     /                           controllers.HomeController.index()
 
-# Products controller
+# Products controller - CRUD operations
+GET     /products                   controllers.ProductsController.list()
+GET     /products/:id               controllers.ProductsController.get(id: Int)
+POST    /products                   controllers.ProductsController.create()
+PUT     /products/:id               controllers.ProductsController.update(id: Int)
+DELETE  /products/:id               controllers.ProductsController.delete(id: Int)
+
+# The original test endpoint
 GET     /products/test              controllers.ProductsController.index()
 
 # Map static resources from the /public folder to the /assets URL path
