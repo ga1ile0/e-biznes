@@ -12,9 +12,23 @@ GET     /products/:id               controllers.ProductsController.get(id: Int)
 POST    /products                   controllers.ProductsController.create()
 PUT     /products/:id               controllers.ProductsController.update(id: Int)
 DELETE  /products/:id               controllers.ProductsController.delete(id: Int)
-
-# The original test endpoint
 GET     /products/test              controllers.ProductsController.index()
+
+# Categories controller - CRUD operations
+POST    /categories                 controllers.CategoryController.create()
+GET     /categories                 controllers.CategoryController.list()
+GET     /categories/:id             controllers.CategoryController.get(id: Int)
+PUT     /categories/:id             controllers.CategoryController.update(id: Int)
+DELETE  /categories/:id             controllers.CategoryController.delete(id: Int)
+
+# Cart controller - CRUD operations
+POST    /carts                      controllers.CartController.create()
+GET     /carts/:id                  controllers.CartController.get(id: Int)
+POST    /carts/:cartId/items        controllers.CartController.addItem(cartId: Int)
+DELETE  /carts/:cartId/items/:itemId controllers.CartController.removeItem(cartId: Int, itemId: Int)
+PUT     /carts/:id                  controllers.CartController.update(id: Int)
+PUT     /carts/:cartId/items/:itemId controllers.CartController.updateItem(cartId: Int, itemId: Int)
+DELETE  /carts/:id                  controllers.CartController.delete(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
