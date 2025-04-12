@@ -14,7 +14,6 @@ class Config(
         fun load(): Config {
             val envVariables = mutableMapOf<String, String>()
             
-            // Try to load .env file if it exists
             val envFile = File(".env")
             if (envFile.exists()) {
                 logger.info("Loading environment variables from .env file")
@@ -33,7 +32,6 @@ class Config(
                 logger.warn("No .env file found at ${envFile.absolutePath}")
             }
             
-            // Get values from environment variables or .env file
             val token = System.getenv("DISCORD_BOT_TOKEN") 
                 ?: envVariables["DISCORD_BOT_TOKEN"]
                 ?: throw RuntimeException("Discord token not found. Set DISCORD_BOT_TOKEN environment variable or provide it in .env file")

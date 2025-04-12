@@ -13,14 +13,12 @@ repositories {
     mavenCentral()
 }
 
-// Set Java compatibility to match Kotlin's target
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {
-    // Your existing dependencies remain unchanged
     implementation("io.ktor:ktor-client-core:2.3.9")
     implementation("io.ktor:ktor-client-cio:2.3.9")
     implementation("io.ktor:ktor-client-content-negotiation:2.3.9")
@@ -46,14 +44,12 @@ tasks.withType<KotlinCompile> {
     }
 }
 
-// Rest of your file remains unchanged
 
 tasks.withType<Jar> {
     manifest {
         attributes["Main-Class"] = "com.ebiznes.ApplicationKt"
     }
     
-    // This ensures that all dependencies are included in the jar
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
