@@ -3,6 +3,7 @@ package com.ebiznes
 import com.ebiznes.config.Config
 import com.ebiznes.discord.DiscordClient
 import com.ebiznes.discord.SimpleCommandHandler
+import com.ebiznes.service.CategoryService
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 
@@ -14,9 +15,11 @@ fun main() {
     try {
         val config = Config.load()
         
+        val categoryService = CategoryService()
+        
         val discordClient = DiscordClient(config.discordToken)
         
-        val commandHandler = SimpleCommandHandler(discordClient)
+        val commandHandler = SimpleCommandHandler(discordClient, categoryService)
         discordClient.addMessageHandler(commandHandler)
         
         runBlocking {
