@@ -1,27 +1,31 @@
 package main
 
 import (
-    "ebiznes-zadanie4/controllers"
-    "github.com/labstack/echo/v4"
-    "github.com/labstack/echo/v4/middleware"
-    "net/http"
+	"ebiznes-zadanie4/controllers"
+	"ebiznes-zadanie4/database"
+	"net/http"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
-    e := echo.New()
+	database.InitDB()
 
-    e.Use(middleware.Logger())
-    e.Use(middleware.Recover())
+	e := echo.New()
 
-    e.GET("/", func(c echo.Context) error {
-        return c.String(http.StatusOK, "Welcome to the Echo API!")
-    })
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
 
-    e.GET("/products", controllers.GetProducts)
-    e.GET("/products/:id", controllers.GetProduct)
-    e.POST("/products", controllers.CreateProduct)
-    e.PUT("/products/:id", controllers.UpdateProduct)
-    e.DELETE("/products/:id", controllers.DeleteProduct)
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Welcome to the Echo API with GORM!")
+	})
 
-    e.Logger.Fatal(e.Start(":8080"))
+	e.GET("/products", controllers.GetProducts)
+	e.GET("/products/:id", controllers.GetProduct)
+	e.POST("/products", controllers.CreateProduct)
+	e.PUT("/products/:id", controllers.UpdateProduct)
+	e.DELETE("/products/:id", controllers.DeleteProduct)
+
+	e.Logger.Fatal(e.Start(":8080"))
 }

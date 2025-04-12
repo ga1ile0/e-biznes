@@ -1,104 +1,88 @@
 package controllers
 
 import (
-    "github.com/labstack/echo/v4"
-    "net/http"
-    "strconv"
-    "sync"
-)
+	"ebiznes-zadanie4/database"
+	"ebiznes-zadanie4/models"
+	"net/http"
+	"strconv"
 
-type Product struct {
-    ID          int    `json:"id"`
-    Name        string `json:"name"`
-    Description string `json:"description"`
-    Price       float64 `json:"price"`
-}
-
-var (
-    products = []Product{
-        {ID: 1, Name: "Laptop", Description: "High-performance laptop", Price: 1299.99},
-        {ID: 2, Name: "Smartphone", Description: "Latest smartphone model", Price: 799.99},
-        {ID: 3, Name: "Headphones", Description: "Noise-canceling headphones", Price: 199.99},
-    }
-    nextID = 4
-    mutex  = &sync.Mutex{} 
+	"github.com/labstack/echo/v4"
 )
 
 func GetProducts(c echo.Context) error {
-    return c.JSON(http.StatusOK, products)
+	var products []models.Product
+	result := database.DB.Find(&products)
+
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Error fetching products"})
+	}
+
+	return c.JSON(http.StatusOK, products)
 }
 
 func GetProduct(c echo.Context) error {
-    id, err := strconv.Atoi(c.Param("id"))
-    if err != nil {
-        return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid ID format"})
-    }
+	id := c.Param("id")
 
-    for _, product := range products {
-        if product.ID == id {
-            return c.JSON(http.StatusOK, product)
-        }
-    }
+	var product models.Product
+	result := database.DB.First(&product, id)
 
-    return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	}
+
+	return c.JSON(http.StatusOK, product)
 }
 
 func CreateProduct(c echo.Context) error {
-    product := new(Product)
-    if err := c.Bind(product); err != nil {
-        return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
-    }
+	product := new(models.Product)
+	if err := c.Bind(product); err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
+	}
 
-    mutex.Lock()
-    defer mutex.Unlock()
+	result := database.DB.Create(&product)
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Error creating product"})
+	}
 
-    product.ID = nextID
-    nextID++
-    products = append(products, *product)
-
-    return c.JSON(http.StatusCreated, product)
+	return c.JSON(http.StatusCreated, product)
 }
 
 func UpdateProduct(c echo.Context) error {
-    id, err := strconv.Atoi(c.Param("id"))
-    if err != nil {
-        return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid ID format"})
-    }
+	id, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid ID format"})
+	}
 
-    updatedProduct := new(Product)
-    if err := c.Bind(updatedProduct); err != nil {
-        return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
-    }
+	var product models.Product
+	result := database.DB.First(&product, id)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	}
 
-    mutex.Lock()
-    defer mutex.Unlock()
+	updatedProduct := new(models.Product)
+	if err := c.Bind(updatedProduct); err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": err.Error()})
+	}
 
-    for i, product := range products {
-        if product.ID == id {
-            updatedProduct.ID = id 
-            products[i] = *updatedProduct
-            return c.JSON(http.StatusOK, updatedProduct)
-        }
-    }
+	product.Name = updatedProduct.Name
+	product.Description = updatedProduct.Description
+	product.Price = updatedProduct.Price
 
-    return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	database.DB.Save(&product)
+
+	return c.JSON(http.StatusOK, product)
 }
 
 func DeleteProduct(c echo.Context) error {
-    id, err := strconv.Atoi(c.Param("id"))
-    if err != nil {
-        return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid ID format"})
-    }
+	id := c.Param("id")
 
-    mutex.Lock()
-    defer mutex.Unlock()
+	var product models.Product
+	result := database.DB.First(&product, id)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	}
 
-    for i, product := range products {
-        if product.ID == id {
-            products = append(products[:i], products[i+1:]...)
-            return c.JSON(http.StatusOK, map[string]string{"message": "Product deleted successfully"})
-        }
-    }
+	database.DB.Delete(&product)
 
-    return c.JSON(http.StatusNotFound, map[string]string{"error": "Product not found"})
+	return c.JSON(http.StatusOK, map[string]string{"message": "Product deleted successfully"})
 }

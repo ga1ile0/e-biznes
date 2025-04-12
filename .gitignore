@@ -42,6 +42,34 @@ logs/
 .settings
 RUNNING_PID
 
+# Go specific (for ebiznes-zadanie4)
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go binary output
+ebiznes-zadanie4/bin/
+ebiznes-zadanie4/pkg/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+*.prof
+
+# Go workspace file
+go.work
+
+# Go module cache
+vendor/
+
+# Dependency directories (remove if using Go modules)
+Godeps/
+
 # OS specific
 .DS_Store
 Thumbs.db
@@ -71,3 +99,8 @@ yarn-error.log*
 # Generated content
 dist/
 **/gen/
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
