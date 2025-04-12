@@ -1,0 +1,17 @@
+# Scala/Play specific
+target/
+project/target/
+project/project/
+logs/
+.bsp/
+.g8/
+.metals/
+.scala-build/
+*.log
+*.class
+
+# SBT specific
+.idea/
+.bloop/
+.metals/
+.vscode/

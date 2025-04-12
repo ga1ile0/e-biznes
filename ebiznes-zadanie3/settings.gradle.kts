@@ -1,1 +1,0 @@
-rootProject.name = "ebiznes-zadanie3"
