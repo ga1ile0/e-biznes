@@ -59,3 +59,17 @@ Webex
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie3) <br/>
 [Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie3_demo.mp4) <br/>
 
+**Zadanie 4** Go
+
+:white_check_mark: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD [Commit](https://github.com/ga1ile0/e-biznes/commit/59f1fae95aae16ded40d5ebedf8aef1c8ca296f2) </br>
+
+:white_check_mark: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy) [Commit](https://github.com/ga1ile0/e-biznes/commit/81026f894e52e22f5a8431df9e41e484cbf6b13e) </br>
+
+:white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint [Commit](https://github.com/ga1ile0/e-biznes/commit/bb52cae034a01238edc5c7ce490ab7329a9059f3) </br>
+
+:white_check_mark: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem [Commit](https://github.com/ga1ile0/e-biznes/commit/d413ca1b0ea84aedede7be7da60634865d18d624) </br>
+
+:white_check_mark: 5.0 pogrupować zapytania w gorm’owe scope'y [Commit](https://github.com/ga1ile0/e-biznes/commit/f155713f1bb2ad645c8df92dd93decc97b9024d1) </br>
+
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie4) <br/>
+[Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie4_demo.mp4) <br/>
