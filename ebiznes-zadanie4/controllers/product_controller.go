@@ -86,3 +86,21 @@ func DeleteProduct(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, map[string]string{"message": "Product deleted successfully"})
 }
+
+func GetProductsByCategory(c echo.Context) error {
+	categoryID := c.Param("categoryId")
+
+	var category models.Category
+	result := database.DB.First(&category, categoryID)
+	if result.Error != nil {
+		return c.JSON(http.StatusNotFound, map[string]string{"error": "Category not found"})
+	}
+
+	var products []models.Product
+	result = database.DB.Where("category_id = ?", categoryID).Find(&products)
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Error fetching products"})
+	}
+
+	return c.JSON(http.StatusOK, products)
+}
