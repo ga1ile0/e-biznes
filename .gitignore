@@ -1,0 +1,73 @@
+# Environment variables and secrets
+.env
+*.env
+**/secrets/
+
+# Kotlin/Gradle specific
+.gradle/
+build/
+out/
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.iml
+*.iws
+*.ipr
+local.properties
+
+# Scala/Play specific (from docker-zadanie2)
+target/
+project/target/
+project/project/
+logs/
+.bsp/
+.g8/
+.metals/
+.scala-build/
+*.log
+
+# SBT specific
+.idea/
+.bloop/
+.metals/
+.vscode/
+.idea_modules/
+.classpath
+.project
+.settings
+RUNNING_PID
+
+# OS specific
+.DS_Store
+Thumbs.db
+*~
+.#*
+#*
+*#
+.swp
+.directory
+
+# Ngrok
+ngrok.yml
+.ngrok/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache directories
+.npm/
+.eslintcache
+.node_repl_history
+
+# Generated content
+dist/
+**/gen/
