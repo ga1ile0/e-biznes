@@ -7,6 +7,6 @@ type Product struct {
 	Name        string   `json:"name" gorm:"size:200;not null"`
 	Description string   `json:"description" gorm:"type:text"`
 	Price       float64  `json:"price" gorm:"not null"`
-	CategoryID  *uint    `json:"category_id"` // Using pointer makes it nullable
+	CategoryID  *uint    `json:"category_id"`
 	Category    Category `json:"category,omitempty" gorm:"foreignKey:CategoryID"`
 }

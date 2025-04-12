@@ -3,6 +3,7 @@ package controllers
 import (
 	"ebiznes-zadanie4/database"
 	"ebiznes-zadanie4/models"
+	"ebiznes-zadanie4/scopes"
 	"net/http"
 	"strconv"
 
@@ -11,7 +12,47 @@ import (
 
 func GetProducts(c echo.Context) error {
 	var products []models.Product
-	result := database.DB.Find(&products)
+	db := database.DB
+
+	minPrice := c.QueryParam("min_price")
+	maxPrice := c.QueryParam("max_price")
+	categoryID := c.QueryParam("category_id")
+	sortBy := c.QueryParam("sort")
+	name := c.QueryParam("name")
+
+	db = db.Scopes(scopes.WithCategory)
+
+	if minPrice != "" {
+		if min, err := strconv.ParseFloat(minPrice, 64); err == nil {
+			db = db.Scopes(scopes.PriceGreaterThan(min))
+		}
+	}
+
+	if maxPrice != "" {
+		if max, err := strconv.ParseFloat(maxPrice, 64); err == nil {
+			db = db.Scopes(scopes.PriceLessThan(max))
+		}
+	}
+
+	if categoryID != "" {
+		if catID, err := strconv.ParseUint(categoryID, 10, 32); err == nil {
+			db = db.Scopes(scopes.InCategory(uint(catID)))
+		}
+	}
+
+	if name != "" {
+		db = db.Scopes(scopes.NameContains(name))
+	}
+
+	switch sortBy {
+	case "price_asc":
+		db = db.Scopes(scopes.OrderByPriceAsc)
+	case "price_desc":
+		db = db.Scopes(scopes.OrderByPriceDesc)
+	}
+
+	// Execute query
+	result := db.Find(&products)
 
 	if result.Error != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Error fetching products"})
@@ -88,7 +129,10 @@ func DeleteProduct(c echo.Context) error {
 }
 
 func GetProductsByCategory(c echo.Context) error {
-	categoryID := c.Param("categoryId")
+	categoryID, err := strconv.ParseUint(c.Param("categoryId"), 10, 32)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid category ID format"})
+	}
 
 	var category models.Category
 	result := database.DB.First(&category, categoryID)
@@ -97,7 +141,14 @@ func GetProductsByCategory(c echo.Context) error {
 	}
 
 	var products []models.Product
-	result = database.DB.Where("category_id = ?", categoryID).Find(&products)
+	result = database.DB.
+		Scopes(
+			scopes.InCategory(uint(categoryID)),
+			scopes.WithCategory,
+			scopes.OrderByPriceAsc,
+		).
+		Find(&products)
+
 	if result.Error != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Error fetching products"})
 	}

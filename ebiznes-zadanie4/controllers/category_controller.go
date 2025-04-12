@@ -3,14 +3,29 @@ package controllers
 import (
 	"ebiznes-zadanie4/database"
 	"ebiznes-zadanie4/models"
+	"ebiznes-zadanie4/scopes"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
 
 func GetCategories(c echo.Context) error {
+	db := database.DB
+	name := c.QueryParam("name")
+	withProducts := c.QueryParam("with_products")
+
+	if name != "" {
+		db = db.Scopes(scopes.CategoryNameContains(name))
+	}
+
+	if withProducts == "true" {
+		db = db.Scopes(scopes.HasProducts)
+	}
+
+	db = db.Scopes(scopes.OrderByNameAsc)
+
 	var categories []models.Category
-	result := database.DB.Find(&categories)
+	result := db.Find(&categories)
 
 	if result.Error != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Error fetching categories"})
@@ -36,7 +51,9 @@ func GetCategoryWithProducts(c echo.Context) error {
 	id := c.Param("id")
 
 	var category models.Category
-	result := database.DB.Preload("Products").First(&category, id)
+	result := database.DB.
+		Scopes(scopes.WithProducts).
+		First(&category, id)
 
 	if result.Error != nil {
 		return c.JSON(http.StatusNotFound, map[string]string{"error": "Category not found"})

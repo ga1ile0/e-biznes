@@ -3,6 +3,7 @@ package controllers
 import (
 	"ebiznes-zadanie4/database"
 	"ebiznes-zadanie4/models"
+	"ebiznes-zadanie4/scopes"
 	"net/http"
 	"strconv"
 
@@ -24,7 +25,9 @@ func GetCart(c echo.Context) error {
 	id := c.Param("id")
 
 	var cart models.Cart
-	result := database.DB.Preload("Items.Product").First(&cart, id)
+	result := database.DB.
+		Scopes(scopes.WithFullCartDetails).
+		First(&cart, id)
 
 	if result.Error != nil {
 		return c.JSON(http.StatusNotFound, map[string]string{"error": "Cart not found"})
