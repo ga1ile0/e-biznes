@@ -2,6 +2,7 @@ package com.ebiznes
 
 import com.ebiznes.config.Config
 import com.ebiznes.discord.DiscordClient
+import com.ebiznes.discord.SimpleCommandHandler
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
 
@@ -15,10 +16,13 @@ fun main() {
         
         val discordClient = DiscordClient(config.discordToken)
         
+        val commandHandler = SimpleCommandHandler(discordClient)
+        discordClient.addMessageHandler(commandHandler)
+        
         runBlocking {
             discordClient.sendMessage(
                 channelId = config.defaultChannelId,
-                content = "Hello! I'm a Discord bot created with Ktor!"
+                content = "Hello! I'm a Discord bot created with Ktor! Type !help to see available commands."
             )
         }
         
