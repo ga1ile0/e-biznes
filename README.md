@@ -41,3 +41,21 @@ skrypt uruchamiający aplikację via ngrok  <br/>
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/docker-zadanie2) <br/>
 [Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie2_demo.mp4) <br/>
 
+**Zadanie 3** Discord bot
+
+:white_check_mark: 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor,
+która pozwala na przesyłanie wiadomości na platformę Discord [Commit](https://github.com/ga1ile0/e-biznes/commit/3eb0fd11c89f74e077bccdd95c8d36f0ce3bfd73) </br>
+
+:white_check_mark: 3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z
+platformy Discord skierowane do aplikacji (bota) [Commit](https://github.com/ga1ile0/e-biznes/commit/46d28cc55bcc6910292223b5981404bc021562bc) </br>
+
+:white_check_mark: 4.0 Zwróci listę kategorii na określone żądanie użytkownika [Commit](https://github.com/ga1ile0/e-biznes/commit/417c685c631eb1ae80db460620cec8e69682b3ce) </br>
+
+:white_check_mark: 4.5 Zwróci listę produktów wg żądanej kategorii [Commit](https://github.com/ga1ile0/e-biznes/commit/4b7b7dc1f0172b00649190fe0970e7d37bfcdffd) </br>
+
+:x: 5.0 Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger,
+Webex
+
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie3) <br/>
+[Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie3_demo.mp4) <br/>
+
