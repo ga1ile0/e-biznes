@@ -104,3 +104,23 @@ dist/
 *.db
 *.sqlite
 *.sqlite3
+
+
+# Node.js/React specific for ebiznes-zadanie5
+node_modules/
+.pnp/
+.pnp.js
+coverage/
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+
+# React output directories
+**/ebiznes-zadanie5/client/build/
+
+# Server binaries
+**/ebiznes-zadanie5/server/server
+EOL
