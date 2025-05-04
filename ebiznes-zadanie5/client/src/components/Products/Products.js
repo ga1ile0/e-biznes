@@ -24,6 +24,33 @@ function Products() {
       });
   }, []);
 
+  const addToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    const existingProduct = cart.find(item => item.id === product.ID);
+    
+    if (existingProduct) {
+      const updatedCart = cart.map(item => 
+        item.id === product.ID 
+          ? { ...item, quantity: item.quantity + 1 } 
+          : item
+      );
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    } else {
+      const cartItem = {
+        id: product.ID,
+        name: product.name,
+        price: product.price,
+        description: product.description,
+        imageUrl: product.image_url,
+        quantity: 1
+      };
+      localStorage.setItem('cart', JSON.stringify([...cart, cartItem]));
+    }
+    
+    setProducts([...products]);
+  };
+
   if (loading) return <div className="loading">Loading products...</div>;
   if (error) return <div className="error">Error loading products: {error}</div>;
 
@@ -37,7 +64,12 @@ function Products() {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p className="price">${product.price.toFixed(2)}</p>
-            <button className="buy-button">Add to Cart</button>
+            <button 
+              className="buy-button" 
+              onClick={() => addToCart(product)}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>

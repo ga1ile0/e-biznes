@@ -1,5 +1,8 @@
 .app {
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-header {
@@ -14,11 +17,12 @@
   color: white;
   padding: 20px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: auto;
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  flex: 1;
 }
