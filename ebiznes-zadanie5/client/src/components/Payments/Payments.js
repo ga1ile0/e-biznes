@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 import './Payments.css';
 
 function Payments() {
   const navigate = useNavigate();
-  const [cartTotal, setCartTotal] = useState(0);
+  const { cartItems, calculateTotal, clearCart } = useCart();
+  
   const [paymentData, setPaymentData] = useState({
     card_number: '',
     card_holder_name: '',
@@ -18,15 +20,11 @@ function Payments() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    setCartTotal(total);
-    
     setPaymentData(prev => ({
       ...prev,
-      amount: total
+      amount: calculateTotal()
     }));
-  }, []);
+  }, [cartItems, calculateTotal]);
 
   const handleChange = (e) => {
     setPaymentData({
@@ -58,7 +56,7 @@ function Payments() {
 
       setMessage('Payment processed successfully!');
       
-      localStorage.removeItem('cart');
+      clearCart();
       
       setPaymentData({
         card_number: '',
@@ -78,6 +76,8 @@ function Payments() {
       setLoading(false);
     }
   };
+
+  const cartTotal = calculateTotal();
 
   return (
     <div className="payment-container">

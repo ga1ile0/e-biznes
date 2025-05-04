@@ -1,36 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 import './Cart.css';
 
 function Cart() {
-  const [cartItems, setCartItems] = useState([]);
+  const { cartItems, updateItemQuantity, removeItem, calculateTotal } = useCart();
   
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartItems(savedCart);
-  }, []);
-
-  const updateQuantity = (productId, newQuantity) => {
-    if (newQuantity < 1) return;
-    
-    const updatedCart = cartItems.map(item => 
-      item.id === productId ? { ...item, quantity: newQuantity } : item
-    );
-    
-    setCartItems(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-  };
-
-  const removeItem = (productId) => {
-    const updatedCart = cartItems.filter(item => item.id !== productId);
-    setCartItems(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-  };
-
-  const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-  };
-
   if (cartItems.length === 0) {
     return (
       <div className="cart-container">
@@ -55,9 +30,9 @@ function Cart() {
               <p className="item-price">${item.price.toFixed(2)}</p>
             </div>
             <div className="item-quantity">
-              <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
+              <button onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
               <span>{item.quantity}</span>
-              <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+              <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
             </div>
             <p className="item-total">${(item.price * item.quantity).toFixed(2)}</p>
             <button className="remove-button" onClick={() => removeItem(item.id)}>✕</button>

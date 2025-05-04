@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../../hooks/useCart';
 import './Navigation.css';
 
 function Navigation() {
   const location = useLocation();
-  
-  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const { cartItemsCount } = useCart();
   
   return (
     <nav className="navigation">
