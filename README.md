@@ -73,3 +73,25 @@ Webex
 
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie4) <br/>
 [Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie4_demo.mp4) <br/>
+
+
+**Zadanie 5** Frontend
+
+:white_check_mark: 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz
+Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w
+Produktach powinniśmy pobierać dane o produktach z aplikacji
+serwerowej; [Commit](https://github.com/ga1ile0/e-biznes/commit/b66a77786f0bc4bc170db994f5613d5db879b9cb) </br>
+
+:white_check_mark: 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing [Commit](https://github.com/ga1ile0/e-biznes/commit/6e3557cc9cf280230fbb145c146b26af0ea98aa2) </br>
+
+:white_check_mark: 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za
+pomocą React hooks [Commit](https://github.com/ga1ile0/e-biznes/commit/aa13a0d7c4b19e7787d6525acc7e54edd4741188) </br>
+
+:x: 4.5 Należy dodać skrypt uruchamiający aplikację serwerową oraz
+kliencką na dockerze via docker-compose
+
+:x: 5.0 Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie5) <br/>
+[Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie5_demo_compr.mp4) <br/>
+
