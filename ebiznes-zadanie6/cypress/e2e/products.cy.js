@@ -24,6 +24,13 @@ describe('Products Page', () => {
       })
       cy.get('.cart-badge').should('exist').should('contain', '1')
     })
+
+    it('verifies product card styling', () => {
+        cy.get('.product-card').first().should('have.css', 'border')
+        cy.get('.product-card').first().should('have.css', 'border-radius')
+        cy.get('.buy-button').should('have.css', 'background-color', 'rgb(42, 157, 143)')
+        cy.get('.buy-button').should('have.css', 'color', 'rgb(255, 255, 255)')
+      })
   
     it('adds multiple of the same product when clicking Add to Cart multiple times', () => {
       const clickCount = 3

@@ -14,7 +14,6 @@ describe('Payment Process', () => {
       cy.wait('@getProducts')
       cy.get('.product-card').first().find('.buy-button').click()
       
-      // Navigateto payment
       cy.get('.navigation a').contains('Payment').click()
     })
     
