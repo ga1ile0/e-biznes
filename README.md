@@ -98,16 +98,16 @@ kliencką na dockerze via docker-compose
 **Zadanie 6** Testy
 
 :white_check_mark: Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium
-(Kotlin, Python, Java, JS, Go, Scala) [Commit]() </br>
+(Kotlin, Python, Java, JS, Go, Scala) [Commit](https://github.com/ga1ile0/e-biznes/commit/b4c7d79e937d8da3874dd51b617561d054d81033) </br>
 
 :white_check_mark: 3.5 Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50
-asercji [Commit]() </br>
+asercji [Commit](https://github.com/ga1ile0/e-biznes/commit/f8cf278c3321cab4022b5f9ce92dc66b7ef59a19) </br>
 
 :white_check_mark: 4.0 Należy stworzyć testy jednostkowe do wybranego wcześniejszego
-projektu z minimum 50 asercjami [Commit]() </br>
+projektu z minimum 50 asercjami [Commit](https://github.com/ga1ile0/e-biznes/commit/cc28abdb7e11444e6af116d0a5f0a69a6c7891b8) </br>
 
 :white_check_mark: 4.5 Należy dodać testy API, należy pokryć wszystkie endpointy z
-minimum jednym scenariuszem negatywnym per endpoint [Commit]() </br>
+minimum jednym scenariuszem negatywnym per endpoint [Commit](https://github.com/ga1ile0/e-biznes/commit/ede05e0ec6f5457017ad9e0237e77e1282c61856) </br>
 
 :x: 5.0 Należy uruchomić testy funkcjonalne na Browserstacku
 
