@@ -125,5 +125,8 @@ Link to the scanned repository: [Link](https://github.com/ga1ile0/test-repo)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
 
-:white_check_mark: 3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita [commit]()
+:white_check_mark: 3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita [commit](https://github.com/ga1ile0/test-repo/commit/bfc8355733c82dbe1c4f9c1f04bf71aa10af9d95)
+
+:white_check_mark: 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej) 
+(wszystkie bugi są w aplikacji klienckiej) [Commit](https://github.com/ga1ile0/test-repo/commit/4e884fd113190153092c9daa5205b7bf3648c804)
 
