@@ -114,3 +114,16 @@ minimum jednym scenariuszem negatywnym per endpoint [Commit](https://github.com/
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie6) <br/>
 [Demo](https://github.com/ga1ile0/e-biznes/blob/main/demos/zadanie6_demo.mp4) <br/>
 
+
+**Zadanie 7** Sonar
+
+Link to the scanned repository: [Link](https://github.com/ga1ile0/test-repo)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=bugs)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
+
+:white_check_mark: 3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita [commit]()
+
