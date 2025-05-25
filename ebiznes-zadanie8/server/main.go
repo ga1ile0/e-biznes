@@ -32,6 +32,8 @@ func main() {
 	})
 
 	e.POST("/api/login", controllers.Login)
+	e.POST("/api/register", controllers.Register)
+
 	e.GET("/api/products", controllers.GetProducts)
 	e.GET("/api/products/:id", controllers.GetProduct)
 	e.POST("/api/payments", controllers.ProcessPayment)

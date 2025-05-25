@@ -1,6 +1,6 @@
 // SonarCloud: This code has been analyzed
 // Quality Gate: Passed
-// Last analyzed: Sun May 25 04:29:35 PM CEST 2025
+// Last analyzed: Sun May 25 04:38:04 PM CEST 2025
 
 package models
 
@@ -18,6 +18,12 @@ type User struct {
 
 type LoginRequest struct {
 	Username string `json:"username" binding:"required"`
+	Password string `json:"password" binding:"required"`
+}
+
+type RegisterRequest struct {
+	Username string `json:"username" binding:"required"`
+	Email    string `json:"email" binding:"required"`
 	Password string `json:"password" binding:"required"`
 }
 

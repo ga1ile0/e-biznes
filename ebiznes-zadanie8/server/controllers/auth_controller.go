@@ -51,3 +51,60 @@ func Login(c echo.Context) error {
 		},
 	})
 }
+
+func Register(c echo.Context) error {
+	registerRequest := new(models.RegisterRequest)
+	if err := c.Bind(registerRequest); err != nil {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Invalid request format"})
+	}
+
+	if registerRequest.Username == "" || registerRequest.Email == "" || registerRequest.Password == "" {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Username, email, and password are required"})
+	}
+
+	var existingUser models.User
+	result := database.DB.Where("username = ?", registerRequest.Username).First(&existingUser)
+	if result.Error == nil {
+		return c.JSON(http.StatusConflict, map[string]string{"error": "Username already taken"})
+	}
+
+	result = database.DB.Where("email = ?", registerRequest.Email).First(&existingUser)
+	if result.Error == nil {
+		return c.JSON(http.StatusConflict, map[string]string{"error": "Email already registered"})
+	}
+
+	hashedPassword, err := models.HashPassword(registerRequest.Password)
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Failed to process registration"})
+	}
+
+	user := models.User{
+		Username: registerRequest.Username,
+		Email:    registerRequest.Email,
+		Password: hashedPassword,
+	}
+
+	result = database.DB.Create(&user)
+	if result.Error != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Failed to register user"})
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"sub": user.ID,
+		"exp": time.Now().Add(time.Hour * 72).Unix(),
+	})
+
+	tokenString, err := token.SignedString(jwtSecret)
+	if err != nil {
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Failed to generate token"})
+	}
+
+	return c.JSON(http.StatusCreated, models.LoginResponse{
+		Token: tokenString,
+		User: models.User{
+			Model:    user.Model,
+			Username: user.Username,
+			Email:    user.Email,
+		},
+	})
+}

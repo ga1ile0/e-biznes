@@ -7,6 +7,7 @@ import Navigation from './components/Navigation/Navigation';
 import { CartProvider } from './context/CartContext';
 import './App.css';
 import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route path="/" element={<Products />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/payment" element={<Payments />} />
