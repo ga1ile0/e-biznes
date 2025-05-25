@@ -130,3 +130,10 @@ Link to the scanned repository: [Link](https://github.com/ga1ile0/test-repo)
 :white_check_mark: 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej) 
 (wszystkie bugi są w aplikacji klienckiej) [Commit](https://github.com/ga1ile0/test-repo/commit/4e884fd113190153092c9daa5205b7bf3648c804)
 
+:white_check_mark: 4.0 Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod
+aplikacji serwerowej) (brak zapaszków w aplikacji serwerowej, wszystkie są w klienckiej)
+
+:white_check_mark: 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa
+w kodzie w Sonarze (kod aplikacji serwerowej) (ponownie, wszystkie są w aplikacji klienckiej)
+
+
