@@ -1,0 +1,50 @@
+.navigation {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .navigation ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+  
+  .navigation li {
+    position: relative;
+  }
+  
+  .navigation a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .navigation li.active a {
+    color: #2a9d8f;
+    border-bottom: 3px solid #2a9d8f;
+  }
+  
+  .navigation a:hover {
+    background-color: #eaeaea;
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background-color: #e76f51;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
