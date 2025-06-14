@@ -125,15 +125,34 @@ Link to the scanned repository: [Link](https://github.com/ga1ile0/test-repo)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=ga1ile0_test-repo&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=ga1ile0_test-repo)
 
-:white_check_mark: 3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita [commit](https://github.com/ga1ile0/test-repo/commit/bfc8355733c82dbe1c4f9c1f04bf71aa10af9d95)
+:white_check_mark: 3.0 Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita [commit](https://github.com/ga1ile0/test-repo/commit/bfc8355733c82dbe1c4f9c1f04bf71aa10af9d95) </br>
 
 :white_check_mark: 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej) 
-(wszystkie bugi są w aplikacji klienckiej) [Commit](https://github.com/ga1ile0/test-repo/commit/4e884fd113190153092c9daa5205b7bf3648c804)
+(wszystkie bugi są w aplikacji klienckiej) [Commit](https://github.com/ga1ile0/test-repo/commit/4e884fd113190153092c9daa5205b7bf3648c804) </br>
 
 :white_check_mark: 4.0 Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod
-aplikacji serwerowej) (brak zapaszków w aplikacji serwerowej, wszystkie są w klienckiej)
+aplikacji serwerowej) (brak zapaszków w aplikacji serwerowej, wszystkie są w klienckiej) </br>
 
 :white_check_mark: 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa
-w kodzie w Sonarze (kod aplikacji serwerowej) (ponownie, wszystkie są w aplikacji klienckiej)
+w kodzie w Sonarze (kod aplikacji serwerowej) (ponownie, wszystkie są w aplikacji klienckiej) </br>
+
+:x: 5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie
+aplikacji klienckiej </br>
+
+**Zadanie 8** Oauth2
+
+:white_check_mark: 3.0 logowanie przez aplikację serwerową (bez Oauth2) [commit](https://github.com/ga1ile0/e-biznes/commit/ed88aee914fc162efa97e728a71355f1e62936b4) </br>
+
+:white_check_mark: 3.5 rejestracja przez aplikację serwerową (bez Oauth2) [commit](https://github.com/ga1ile0/e-biznes/commit/d5d318a99770c0fa2f7810b3096bbd45e5b986fd) </br>
+
+:white_check_mark: 4.0 logowanie via Google OAuth2 [commit](https://github.com/ga1ile0/e-biznes/commit/032e2472df307cbc332205a0b260a547e1586b35) </br>
+
+:x: 4.5 logowanie via Facebook lub Github OAuth2 </br>
+
+:x: 5.0 zapisywanie danych logowania OAuth2 po stronie serwera </br>
+
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie8) </br>
+
+
 
 
