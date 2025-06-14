@@ -18,20 +18,20 @@ var DB *gorm.DB
 func InitDB() {
 	var err error
 
-	DB, err = gorm.Open(sqlite.Open("store.db"), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Info),
-	})
+    DB, err = gorm.Open(sqlite.Open("store.db"), &gorm.Config{
+        Logger: logger.Default.LogMode(logger.Info),
+    })
 
-	if err != nil {
-		panic("Failed to connect to database: " + err.Error())
-	}
+    if err != nil {
+        panic("Failed to connect to database: " + err.Error())
+    }
 
-	fmt.Println("Database connection established")
+    fmt.Println("Database connection established")
 
-	err = DB.AutoMigrate(&models.Product{}, &models.Payment{}, &models.User{})
-	if err != nil {
-		panic("Failed to migrate database: " + err.Error())
-	}
+    err = DB.AutoMigrate(&models.Product{}, &models.Payment{}, &models.User{}, &models.OAuthToken{})
+    if err != nil {
+        panic("Failed to migrate database: " + err.Error())
+    }
 
 	var userCount int64
 	DB.Model(&models.User{}).Count(&userCount)

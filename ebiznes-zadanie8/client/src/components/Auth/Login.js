@@ -7,6 +7,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +40,10 @@ const Login = () => {
     }
   };
 
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:8080/api/auth/google';
+  };
+
   return (
     <div className="login-container">
       <h2>Login</h2>
@@ -68,6 +73,18 @@ const Login = () => {
           {loading ? 'Logging in...' : 'Login'}
         </button>
       </form>
+
+      <div className="social-login">
+        <p>Or login with:</p>
+        <button 
+          type="button" 
+          onClick={handleGoogleLogin} 
+          className="google-login-button"
+        >
+          Login with Google
+        </button>
+      </div>
+      
       <div className="auth-link">
         Don't have an account? <Link to="/register">Register</Link>
       </div>
