@@ -1,6 +1,7 @@
 import os
 import openai
 from dotenv import load_dotenv
+from services.conversation_templates import get_random_opening, get_random_closing, is_greeting, is_farewell
 
 load_dotenv()
 
@@ -12,6 +13,12 @@ class GPTService:
 
     def get_response(self, message):
         try:
+            if is_greeting(message):
+                return get_random_opening()
+            
+            if is_farewell(message):
+                return get_random_closing()
+            
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
