@@ -156,7 +156,7 @@ aplikacji klienckiej </br>
 **Zadanie 10** Chmura/CI </br>
 
 :white_check_mark: 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na
-dockerze [commit](https://github.com/ga1ile0/e-biznes/commit/055e316389f27243f9e145494e99eb7b6bc37cac)
+dockerze [commit](https://github.com/ga1ile0/e-biznes/commit/055e316389f27243f9e145494e99eb7b6bc37cac) </br>
 Link do strony (załadowanie może chwile trwać ze względu na darmową wersje): https://e-biznes-zadanie10-frontend.onrender.com/ </br>
 
 :white_check_mark: 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania
