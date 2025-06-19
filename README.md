@@ -153,6 +153,17 @@ aplikacji klienckiej </br>
 
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie8) </br>
 
+**Zadanie 10** Chmura/CI
+:white_check_mark: 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na
+dockerze [commit](https://github.com/ga1ile0/e-biznes/commit/055e316389f27243f9e145494e99eb7b6bc37cac)
+Link do strony (załadowanie może chwile trwać ze względu na darmową wersje): https://e-biznes-zadanie10-frontend.onrender.com/ </br>
+:white_check_mark: 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania
+aplikacji (np. via fatjar) [commit](https://github.com/ga1ile0/e-biznes/commit/6c189ca2301311e0d34a5f6272d497c3ac653518) </br>
+:x: 4.0 Dodać notyfikację mailową o zbudowaniu aplikacji </br>
+:x: 4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na
+chmurę </br>
+:x: 5.0 Dodać uruchomienie regresyjnych testów automatycznych
+(funkcjonalnych) jako krok w Actions </br>
 
 
 
