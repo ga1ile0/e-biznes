@@ -20,11 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: './ebiznes-zadanie10/backend/package-lock.json'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci || npm install
         
       - name: Build backend
         run: npm run build --if-present
@@ -45,11 +43,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: './ebiznes-zadanie10/frontend/package-lock.json'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci || npm install
         
       - name: Build frontend
         run: npm run build
