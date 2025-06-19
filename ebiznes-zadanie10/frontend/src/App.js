@@ -6,7 +6,9 @@ function App() {
   const [apiUrl, setApiUrl] = useState('');
   
   useEffect(() => {
-    const url = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+    const url = (window.RUNTIME_CONFIG && window.RUNTIME_CONFIG.REACT_APP_API_URL) || 
+                process.env.REACT_APP_API_URL || 
+                'http://localhost:5000/api';
     setApiUrl(url);
     
     console.log('Attempting to fetch from:', url);
