@@ -2,6 +2,7 @@
 .env
 *.env
 **/secrets/
+**/__pycache__/
 
 # Kotlin/Gradle specific
 .gradle/
