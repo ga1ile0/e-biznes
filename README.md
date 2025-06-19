@@ -153,6 +153,24 @@ aplikacji klienckiej </br>
 
 [Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie8) </br>
 
+**Zadanie 9** ChatGPT Bot
+
+:white_check_mark: 3.0 należy stworzyć po stronie serwerowej osobny serwis do łącznia z
+chatGPT do usługi chat  [commit](https://github.com/ga1ile0/e-biznes/commit/178d96928f87c6bef29a37c6dccb07b1d5d91c2b) </br>
+
+:white_check_mark: 3.5 należy stworzyć interfejs frontowy dla użytkownika, który
+komunikuje się z serwisem; odpowiedzi powinny być wysyałen do
+frontendowego interfejsu  [commit](https://github.com/ga1ile0/e-biznes/commit/18ab5754191fcdce91210c79f5d84361c4401ae3) </br>
+
+:white_check_mark: 4.0 stworzyć listę 5 różnych otwarć oraz zamknięć rozmowy  [commit](https://github.com/ga1ile0/e-biznes/commit/c1c3f0fe75995cf885066637b68b6a361f60852f) </br>
+
+:x: 4.5 filtrowanie po zagadnieniach związanych ze sklepem (np.
+ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT </br>
+
+:x: 5.0 filtrowanie odpowiedzi po sentymencie </br>
+
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie9/chatbot-service) </br>
+
 **Zadanie 10** Chmura/CI </br>
 
 :white_check_mark: 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na
@@ -168,8 +186,7 @@ aplikacji (np. via fatjar) [commit](https://github.com/ga1ile0/e-biznes/commit/6
 chmurę </br>
 
 :x: 5.0 Dodać uruchomienie regresyjnych testów automatycznych
-
 (funkcjonalnych) jako krok w Actions </br>
 
-
+[Kod](https://github.com/ga1ile0/e-biznes/tree/main/ebiznes-zadanie10)
 
